@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>blog</title>
+    <url>/test2/blog/</url>
+    <content><![CDATA[<h1 id="blog"><a href="#blog" class="headerlink" title="blog"></a>blog</h1>]]></content>
+      <categories>
+        <category>test2</category>
+      </categories>
+      <tags>
+        <tag>whu-td2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>paper</title>
+    <url>/uncategorized/paper/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>test for blog</title>
+    <url>/test/test/</url>
+    <content><![CDATA[<h1 id="test-for-blog"><a href="#test-for-blog" class="headerlink" title="test for blog"></a>test for blog</h1><p>This is a test for WHU-TD blog</p>
+<p>这是一个测试。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>whu-td</tag>
+      </tags>
+  </entry>
+</search>
