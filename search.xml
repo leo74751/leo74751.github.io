@@ -17,27 +17,12 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>test for blog</title>
-    <url>/test/test/</url>
-    <content><![CDATA[<h1 id="test-for-blog"><a href="#test-for-blog" class="headerlink" title="test for blog"></a>test for blog</h1><p>This is a test for WHU-TD blog</p>
-<p>这是一个测试。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>whu-td</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blog</title>
+    <title>善用你的计算机</title>
     <url>/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/%E5%96%84%E7%94%A8%E4%BD%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
     <content><![CDATA[<p>#善用你的计算机(键盘手法与快捷键)<br>计算机是陪伴我们以后学习、生活、工作最重要的伙伴之一，它是我们最有力的工具，但并不是每个人都能善用自己的计算机的。本文从打字指法、快捷键、效率软件三个角度教大家如何善用自己的计算机。</p>
 <h2 id="键盘的正确使用指法"><a href="#键盘的正确使用指法" class="headerlink" title="键盘的正确使用指法"></a>键盘的正确使用指法</h2><p>身为一个准程序员，盲打是一项基础技能，有正确指法的加持，你的打字动作会更加流畅。</p>
 <p>首先是打字的准备动作，左手放在ASDF键上，右手放在JKL;上，F和J键在键盘上一般都会有突起。这样的放法相当于建立了一个坐标系，方便打出那些不那么好找的符号。</p>
-<img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113315250-1738095953.jpg" width = "440" alt="键盘起手" >
+<img src="http://qyw2bbi51.hn-bkt.clouddn.com/2169406-20201001113315250-1738095953.jpg" width = "440" alt="键盘起手" >
 
 <p>第二是手指的“平行”移动规律，每个手指负责的键位基本是平行的一列或几列，一个手指(除了右手小指)要输入的键只需要从上下移动就能找到。</p>
 <img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113339238-1476063869.jpg" width = "440" alt="对应键位" >
@@ -119,6 +104,21 @@
       </categories>
       <tags>
         <tag>新手入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test for blog</title>
+    <url>/test/test/</url>
+    <content><![CDATA[<h1 id="test-for-blog"><a href="#test-for-blog" class="headerlink" title="test for blog"></a>test for blog</h1><p>This is a test for WHU-TD blog</p>
+<p>这是一个测试。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>whu-td</tag>
       </tags>
   </entry>
 </search>
