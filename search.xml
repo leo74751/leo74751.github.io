@@ -1,124 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>blog</title>
-    <url>/test2/blog/</url>
-    <content><![CDATA[<h1 id="blog"><a href="#blog" class="headerlink" title="blog"></a>blog</h1>]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>善用你的计算机</title>
+      <link href="/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/%E5%96%84%E7%94%A8%E4%BD%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <url>/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/%E5%96%84%E7%94%A8%E4%BD%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<p>#善用你的计算机(键盘手法与快捷键)<br>计算机是陪伴我们以后学习、生活、工作最重要的伙伴之一，它是我们最有力的工具，但并不是每个人都能善用自己的计算机的。本文从打字指法、快捷键、效率软件三个角度教大家如何善用自己的计算机。</p><h2 id="键盘的正确使用指法"><a href="#键盘的正确使用指法" class="headerlink" title="键盘的正确使用指法"></a>键盘的正确使用指法</h2><p>身为一个准程序员，盲打是一项基础技能，有正确指法的加持，你的打字动作会更加流畅。</p><p>首先是打字的准备动作，左手放在ASDF键上，右手放在JKL;上，F和J键在键盘上一般都会有突起。这样的放法相当于建立了一个坐标系，方便打出那些不那么好找的符号。</p><img src="http://qyw2bbi51.hn-bkt.clouddn.com/2169406-20201001113315250-1738095953.jpg" width = "440" alt="键盘起手" ><p>第二是手指的“平行”移动规律，每个手指负责的键位基本是平行的一列或几列，一个手指(除了右手小指)要输入的键只需要从上下移动就能找到。</p><img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113339238-1476063869.jpg" width = "440" alt="对应键位" ><p>键盘的指法主要需要大家自己去练习。大家练习的时候最好选择针对程序员的指法练习，这样会比一般的打字练习涉及到更多符号的输入。</p><p>推荐练习网站：<a href="http://www.speedcoder.net/">http://www.speedcoder.net/</a></p><p>会把需要用到的手指显示出来，对指法练习入门极为友好。(无需登录，登录只是记录你的成绩而已。)</p><h2 id="常用Windows快捷键"><a href="#常用Windows快捷键" class="headerlink" title="常用Windows快捷键"></a>常用Windows快捷键</h2><p>Windows快捷键不仅在于我们可以很快地呼出某些功能，还在于减少我们对鼠标的依赖，使用鼠标其实是一种简单但并不高效的交互方式，这一点尤其体现在Linux的命令以及文章、代码的快速编写中。</p><h3 id="Ctrl相关"><a href="#Ctrl相关" class="headerlink" title="Ctrl相关"></a>Ctrl相关</h3><p>Ctrl+A 全选</p><p>Ctrl+C 复制</p><p>Ctrl+V 粘贴</p><p>Ctrl+X 剪切</p><p>Ctrl+F 搜索(浏览器、office等都可使用)</p><p>Ctrl+Z 撤销操作</p><p>Ctrl+Y 恢复某项操作(与Ctrl+Z相反)</p><p>Ctrl+W 删除当前窗口</p><p>Ctrl+N 打开新窗口</p><p>Ctrl+Shift+N 新建文件夹</p><p>Ctrl+滚轮 缩放大小</p><p>Ctrl+Alt+delete 打开任务管理器</p><p>Ctrl+Alt+S 屏幕录制</p><h3 id="Shift相关"><a href="#Shift相关" class="headerlink" title="Shift相关"></a>Shift相关</h3><p>Shift 切换中英文输入</p><p>Shift+空格 切换全角半角</p><p>Shift+←(→、↑、↓) 从光标处开始往左(右、上、下)选择文字</p><p>Shift+Ctrl+←(→) 以单词为单位从光标处开始往左(右)选择文字</p><h3 id="Win相关"><a href="#Win相关" class="headerlink" title="Win相关"></a>Win相关</h3><p>Win+主键盘区数字键 打开位于任务栏指定位置的程序</p><p>Win+D 显示桌面</p><p>Win+E 打开此电脑</p><p>Win+L 锁屏</p><p>Win+R 打开运行对话框，输入cmd可打开命令行界面。</p><p>Win+I 打开设置</p><p>Win+V 打开剪切板</p><p>Win+shift+S 截图</p><p>Win+←(→) 最大化窗口到左(右)侧的屏幕上</p><p>Win+↑(↓) 最大(小)化窗口</p><p>Win+Tab 打开任务视图</p><p>Win+Ctrl+D 创建新的虚拟桌面</p><p>Win+Ctrl+F4 关闭当前虚拟桌面</p><p>Win+Ctrl+←(→) 切换虚拟桌面</p><h3 id="Alt相关"><a href="#Alt相关" class="headerlink" title="Alt相关"></a>Alt相关</h3><p>Alt+←(→) 查看上(下)一个文件夹</p><p>Alt+↑ 查看父文件夹</p><p>Alt+Tab 切换任务</p><h3 id="Fn相关"><a href="#Fn相关" class="headerlink" title="Fn相关"></a>Fn相关</h3><p>F2 文件重命名</p><p>F5 刷新</p><p>F8 进入安全模式(重装电脑启动时使用)</p><h3 id="浏览器内快捷键"><a href="#浏览器内快捷键" class="headerlink" title="浏览器内快捷键"></a>浏览器内快捷键</h3><p>Ctrl+D 收藏当前网页入收藏夹</p><p>Ctrl+H 历史记录</p><p>Ctrl+W 删除当前窗口</p><p>Ctrl+shift+T 恢复上一个窗口</p><p>Ctrl+T 新建一个窗口</p><p>Ctrl+G 打开搜索界面(在网页中寻找文字)</p><p>Ctrl+Tab 在选项卡上向前移动</p><p>Ctrl+Shift+Tab 在选项卡上向后移动</p><p>F6 定位到地址栏(可以直接搜索，不用鼠标)</p><p>F11 全屏</p><p>F12 打开控制台</p><p>此外，不同软件有不同软件的快捷键，如word、PS、IDA等。</p><h2 id="效率软件推荐"><a href="#效率软件推荐" class="headerlink" title="效率软件推荐"></a>效率软件推荐</h2><h3 id="Everything"><a href="#Everything" class="headerlink" title="Everything"></a>Everything</h3><p>“Everything” 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。在找文件的时候非常方便。</p><img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113403076-338896827.png" width = "440" alt="Everything" ><p>使用指南：<a href="https://blog.csdn.net/korea1121/article/details/51919599">https://blog.csdn.net/korea1121/article/details/51919599</a></p><p>官网地址：<a href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p><h3 id="Quicker"><a href="#Quicker" class="headerlink" title="Quicker"></a>Quicker</h3><p>Quicker是一个集成度极高的动作库，可以在官网的动作库中添加打开软件、翻译、截图、OCR、运行命令等众多功能，可以说是一个超级快捷键。</p><img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113440753-2050650796.png" width = "440" alt="Quicker" ><p>这款软件有专业版和免费版，免费版最多可支持10个功能，满足日常需要基本是没问题的。</p><p>如果想购买专业版，可以输入我的个人推荐码：219068-5560，双方都可获得90天的专业版延期</p><p>动作推荐：<a href="https://www.zhihu.com/question/323865623">https://www.zhihu.com/question/323865623</a></p><p>官网地址：<a href="https://getquicker.net/">https://getquicker.net/</a></p><h3 id="Zeal"><a href="#Zeal" class="headerlink" title="Zeal"></a>Zeal</h3><p>zeal是一款免费的编程语言本地离线API文档的集成库，非常便于我们查找新函数或者深入了解某个函数，而且上面的函数文档是英文版的，对以后的个人能力的发展能起到非常积极的作用。</p><img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113452196-1301146597.png" width = "440" alt="Zeal" ><p>安装说明：<a href="https://www.cnblogs.com/souldee/p/9523497.html">https://www.cnblogs.com/souldee/p/9523497.html</a></p><p>官网地址：<a href="https://zealdocs.org/">https://zealdocs.org/</a></p><p>作者：2019级hxj</p>]]></content>
+      
+      
       <categories>
-        <category>test2</category>
+          
+          <category> 电脑优化 </category>
+          
       </categories>
-      <tags>
-        <tag>whu-td2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>paper</title>
-    <url>/uncategorized/paper/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>善用你的计算机</title>
-    <url>/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/%E5%96%84%E7%94%A8%E4%BD%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
-    <content><![CDATA[<p>#善用你的计算机(键盘手法与快捷键)<br>计算机是陪伴我们以后学习、生活、工作最重要的伙伴之一，它是我们最有力的工具，但并不是每个人都能善用自己的计算机的。本文从打字指法、快捷键、效率软件三个角度教大家如何善用自己的计算机。</p>
-<h2 id="键盘的正确使用指法"><a href="#键盘的正确使用指法" class="headerlink" title="键盘的正确使用指法"></a>键盘的正确使用指法</h2><p>身为一个准程序员，盲打是一项基础技能，有正确指法的加持，你的打字动作会更加流畅。</p>
-<p>首先是打字的准备动作，左手放在ASDF键上，右手放在JKL;上，F和J键在键盘上一般都会有突起。这样的放法相当于建立了一个坐标系，方便打出那些不那么好找的符号。</p>
-<img src="http://qyw2bbi51.hn-bkt.clouddn.com/2169406-20201001113315250-1738095953.jpg" width = "440" alt="键盘起手" >
-
-<p>第二是手指的“平行”移动规律，每个手指负责的键位基本是平行的一列或几列，一个手指(除了右手小指)要输入的键只需要从上下移动就能找到。</p>
-<img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113339238-1476063869.jpg" width = "440" alt="对应键位" >
-
-<p>键盘的指法主要需要大家自己去练习。大家练习的时候最好选择针对程序员的指法练习，这样会比一般的打字练习涉及到更多符号的输入。</p>
-<p>推荐练习网站：<a href="http://www.speedcoder.net/">http://www.speedcoder.net/</a></p>
-<p>会把需要用到的手指显示出来，对指法练习入门极为友好。(无需登录，登录只是记录你的成绩而已。)</p>
-<h2 id="常用Windows快捷键"><a href="#常用Windows快捷键" class="headerlink" title="常用Windows快捷键"></a>常用Windows快捷键</h2><p>Windows快捷键不仅在于我们可以很快地呼出某些功能，还在于减少我们对鼠标的依赖，使用鼠标其实是一种简单但并不高效的交互方式，这一点尤其体现在Linux的命令以及文章、代码的快速编写中。</p>
-<h3 id="Ctrl相关"><a href="#Ctrl相关" class="headerlink" title="Ctrl相关"></a>Ctrl相关</h3><p>Ctrl+A 全选</p>
-<p>Ctrl+C 复制</p>
-<p>Ctrl+V 粘贴</p>
-<p>Ctrl+X 剪切</p>
-<p>Ctrl+F 搜索(浏览器、office等都可使用)</p>
-<p>Ctrl+Z 撤销操作</p>
-<p>Ctrl+Y 恢复某项操作(与Ctrl+Z相反)</p>
-<p>Ctrl+W 删除当前窗口</p>
-<p>Ctrl+N 打开新窗口</p>
-<p>Ctrl+Shift+N 新建文件夹</p>
-<p>Ctrl+滚轮 缩放大小</p>
-<p>Ctrl+Alt+delete 打开任务管理器</p>
-<p>Ctrl+Alt+S 屏幕录制</p>
-<h3 id="Shift相关"><a href="#Shift相关" class="headerlink" title="Shift相关"></a>Shift相关</h3><p>Shift 切换中英文输入</p>
-<p>Shift+空格 切换全角半角</p>
-<p>Shift+←(→、↑、↓) 从光标处开始往左(右、上、下)选择文字</p>
-<p>Shift+Ctrl+←(→) 以单词为单位从光标处开始往左(右)选择文字</p>
-<h3 id="Win相关"><a href="#Win相关" class="headerlink" title="Win相关"></a>Win相关</h3><p>Win+主键盘区数字键 打开位于任务栏指定位置的程序</p>
-<p>Win+D 显示桌面</p>
-<p>Win+E 打开此电脑</p>
-<p>Win+L 锁屏</p>
-<p>Win+R 打开运行对话框，输入cmd可打开命令行界面。</p>
-<p>Win+I 打开设置</p>
-<p>Win+V 打开剪切板</p>
-<p>Win+shift+S 截图</p>
-<p>Win+←(→) 最大化窗口到左(右)侧的屏幕上</p>
-<p>Win+↑(↓) 最大(小)化窗口</p>
-<p>Win+Tab 打开任务视图</p>
-<p>Win+Ctrl+D 创建新的虚拟桌面</p>
-<p>Win+Ctrl+F4 关闭当前虚拟桌面</p>
-<p>Win+Ctrl+←(→) 切换虚拟桌面</p>
-<h3 id="Alt相关"><a href="#Alt相关" class="headerlink" title="Alt相关"></a>Alt相关</h3><p>Alt+←(→) 查看上(下)一个文件夹</p>
-<p>Alt+↑ 查看父文件夹</p>
-<p>Alt+Tab 切换任务</p>
-<h3 id="Fn相关"><a href="#Fn相关" class="headerlink" title="Fn相关"></a>Fn相关</h3><p>F2 文件重命名</p>
-<p>F5 刷新</p>
-<p>F8 进入安全模式(重装电脑启动时使用)</p>
-<h3 id="浏览器内快捷键"><a href="#浏览器内快捷键" class="headerlink" title="浏览器内快捷键"></a>浏览器内快捷键</h3><p>Ctrl+D 收藏当前网页入收藏夹</p>
-<p>Ctrl+H 历史记录</p>
-<p>Ctrl+W 删除当前窗口</p>
-<p>Ctrl+shift+T 恢复上一个窗口</p>
-<p>Ctrl+T 新建一个窗口</p>
-<p>Ctrl+G 打开搜索界面(在网页中寻找文字)</p>
-<p>Ctrl+Tab 在选项卡上向前移动</p>
-<p>Ctrl+Shift+Tab 在选项卡上向后移动</p>
-<p>F6 定位到地址栏(可以直接搜索，不用鼠标)</p>
-<p>F11 全屏</p>
-<p>F12 打开控制台</p>
-<p>此外，不同软件有不同软件的快捷键，如word、PS、IDA等。</p>
-<h2 id="效率软件推荐"><a href="#效率软件推荐" class="headerlink" title="效率软件推荐"></a>效率软件推荐</h2><h3 id="Everything"><a href="#Everything" class="headerlink" title="Everything"></a>Everything</h3><p>“Everything” 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。在找文件的时候非常方便。</p>
-<img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113403076-338896827.png" width = "440" alt="Everything" >
-
-<p>使用指南：<a href="https://blog.csdn.net/korea1121/article/details/51919599">https://blog.csdn.net/korea1121/article/details/51919599</a></p>
-<p>官网地址：<a href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<h3 id="Quicker"><a href="#Quicker" class="headerlink" title="Quicker"></a>Quicker</h3><p>Quicker是一个集成度极高的动作库，可以在官网的动作库中添加打开软件、翻译、截图、OCR、运行命令等众多功能，可以说是一个超级快捷键。</p>
-<img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113440753-2050650796.png" width = "440" alt="Quicker" >
-
-<p>这款软件有专业版和免费版，免费版最多可支持10个功能，满足日常需要基本是没问题的。</p>
-<p>如果想购买专业版，可以输入我的个人推荐码：219068-5560，双方都可获得90天的专业版延期</p>
-<p>动作推荐：<a href="https://www.zhihu.com/question/323865623">https://www.zhihu.com/question/323865623</a></p>
-<p>官网地址：<a href="https://getquicker.net/">https://getquicker.net/</a></p>
-<h3 id="Zeal"><a href="#Zeal" class="headerlink" title="Zeal"></a>Zeal</h3><p>zeal是一款免费的编程语言本地离线API文档的集成库，非常便于我们查找新函数或者深入了解某个函数，而且上面的函数文档是英文版的，对以后的个人能力的发展能起到非常积极的作用。</p>
-<img src="https://img2020.cnblogs.com/blog/2169406/202010/2169406-20201001113452196-1301146597.png" width = "440" alt="Zeal" >
-
-<p>安装说明：<a href="https://www.cnblogs.com/souldee/p/9523497.html">https://www.cnblogs.com/souldee/p/9523497.html</a></p>
-<p>官网地址：<a href="https://zealdocs.org/">https://zealdocs.org/</a></p>
-<p>作者：2019级hxj</p>
-]]></content>
-      <categories>
-        <category>电脑优化</category>
-      </categories>
-      <tags>
-        <tag>新手入门</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test for blog</title>
-    <url>/test/test/</url>
-    <content><![CDATA[<h1 id="test-for-blog"><a href="#test-for-blog" class="headerlink" title="test for blog"></a>test for blog</h1><p>This is a test for WHU-TD blog</p>
-<p>这是一个测试。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>whu-td</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 新手入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
