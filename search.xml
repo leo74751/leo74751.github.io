@@ -1,48 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>c语言数据类型-1</title>
-    <url>/C%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="C语言数据类型-1"><a href="#C语言数据类型-1" class="headerlink" title="C语言数据类型-1"></a>C语言数据类型-1</h1><h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><p><strong>数据类型、整数数据类型、补码编码、有符号数、其它整数类型</strong></p>
-<h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><blockquote>
-<p>刚开始学习时，不必了解所有的细节，就像学习开车之前不必详细了解汽车内部引擎的原理一样。——《C Primer Plus》第六版</p>
-</blockquote>
-<p>　　在本篇博客中，笔者将简要介绍C语言的基本数据类型。<u><strong>其中要点为：补码编码原理以及采用该种编码的原因、简单介绍IEEE—745标准、数据类型之间的转化。</strong></u>这些内容在所有C语言书籍中都有讲解，<u>本文主要以《CSAPP》第三版以及《C Primer Plus》第六版作为参考，面向语言学习入门者，简要地讲解该部分内容。由于笔者水平有限，如有错误，敬请指出。</u></p>
-<h2 id="二、写在前面"><a href="#二、写在前面" class="headerlink" title="二、写在前面"></a>二、写在前面</h2><p>​        如果你只是想直接了解补码的值如何计算，浮点数如何表示，那么其实非常简单。对于补码而言，我们先将数拷贝为两份。将其中一份最高位（根据二进制数的位数来确定，正数最高位为0，负数为1）去掉，然后将另一份最高位之后全置零，两份相减即可得到补码值的大小。<strong>即最高位表示负权，补码值为负权加上剩下数的大小。</strong></p>
-<blockquote>
-<p>例如，11100101为一个8位二进制数，则该数的符号位为1，补码的大小为 -1 * 2^7 + 1 * 2^6 + 1* 2^5 + 1* 2^2 +1* 2^0 。</p>
-<p>11011为一个8位二进制数，则该数的符号为0，补码的大小为1 * 2^4 + 1* 2^3 + 1* 2^1 +1* 2^0</p>
-</blockquote>
-<p>​        <u>浮点数不过是计算机中的科学计数法（ a<em>b^c )，只不过在这里a为一个纯小数，b由常见的10变成了2（某些情况下，浮点数表示有特殊含义，但不在本文讨论范围中）。</u>在IEEE—745标准中，明确规定了不同长度的浮点数各位上表示的含义。*<em>在读浮点数时，根据标准转化为科学计数法即可得到浮点数数值。</em></em></p>
-<p>​        言尽于此，你已经学会了如何读出以及初步使用这些基础的数据类型。但这只是解决了方法论的问题，而并未解决认识论的问题。稍加思考你一定会问，“c语言为什么需要使用这样的数据类型？” ”为何一定要使用补码这样违反直觉的表示方法？“ “在特殊情况下，这些精巧的数据结构会造成什么意想不到的后果？“</p>
-<p>​        如果你有对这些问题感到好奇，并且有一定的空余时间，那么欢迎阅读博客的下面部分。</p>
-<h2 id="三、数据类型简介"><a href="#三、数据类型简介" class="headerlink" title="三、数据类型简介"></a>三、数据类型简介</h2><h3 id="1、计算机中的数据存储"><a href="#1、计算机中的数据存储" class="headerlink" title="1、计算机中的数据存储"></a>1、计算机中的数据存储</h3><p>​        <u>毫无疑问，<strong>计算机有两项功能是最重要的：一是计算，二是储存</strong></u>。计算的对象、计算得到的结果都要储存在一定空间中，才能为人所用。在现实生活中，我们通常会将各种物品储存在分类好的隔箱中，计算机也遵循这样的思路。这样做的好处是显而易见的：既能用大隔箱套小隔箱方便查找，隔箱与隔箱之间的数据也不会相互干扰。计算机是一个标准化的系统，因此储存的隔箱也是严格按照标准设定的。为了减少浪费，设计者将最小的隔箱的大小定为数据能分割的最小单位，即1个信息位（ 1 bit ），它仅能通过高低电位表示两种状态，我们将这两种状态分别令为0和1。</p>
-<h3 id="2、二进制编码"><a href="#2、二进制编码" class="headerlink" title="2、二进制编码"></a>2、二进制编码</h3><p>​        在这里考一下大家，人的一只手最多能表示多少个数？只有5个吗？当然不是，我们至少能清晰表达32种不同的状态，对应起来就能表示0-31。 这是如何办到的呢？<u>很简单，我们从小拇指开始，分别将5个手指看成5个不同的数位。每个数位我们根据手指的屈伸，可以取0、1两种情况，根据排列组合的知识，我们可以知道这一共可以表示32种不同的情况。</u>同样，如果我们有5盏具有一定顺序的灯，灯的开与关分别表示两种不同的状态，那么我们也可以表示32（2^5）种状态。按照此规律，我们不难推算出：如果有8盏这样的灯，我们可以表示出256（2^8）种不同的状态；如果有16盏，则可表示65536（2^16）种状态；如果有32盏，则可以达到4294967296（2^32）种，这已经是一个很惊人的数字了，而我们只是简单用到了32盏有顺序的灯而已。</p>
-<h3 id="3、数据类型的抽象化"><a href="#3、数据类型的抽象化" class="headerlink" title="3、数据类型的抽象化"></a>3、数据类型的抽象化</h3><p>​        这样简单高效的表示方法自然受到了计算机行业的喜爱。<u>半导体技术能方便地存储高低电平两种信号，<strong>因此储存2进制数据成为了计算机行业的通用存储方式。</strong></u>但是这些存储元件实际上类似于一条近乎无限延展的方格链，我们直接存储明显不够高效。那自然就想到将这么长的链条划分为若干段。但我们有各种各样的信息需要储存，例如储存技术部所有小朋友的姓名需要划分十个小格子，而储存全校的姓名就需要一万个，因此统一划分为一种样式明显是不合理的。<u>于是结合前文中提到的大隔箱套小隔箱的方式，我们建立起了一个标准的划分方法，确保绝大部分计算机都能识别出该种方法，<strong>这就是计算机的数据类型，即规定多少个方格划分出来储存特定的一类数据。</strong></u></p>
-<h2 id="四、c语言中的数据类型"><a href="#四、c语言中的数据类型" class="headerlink" title="四、c语言中的数据类型"></a>四、c语言中的数据类型</h2><h3 id="1、字节（byte）与char类型"><a href="#1、字节（byte）与char类型" class="headerlink" title="1、字节（byte）与char类型"></a>1、字节（byte）与char类型</h3><p>​        <strong>在大部分语言中，<u>我们规定8个小灯组成最小的格子，即1字节（byte），这是计算机中数据储存的基本单位，它能表示256种不同的状态</u>。</strong>很明显，这一种类型储存的数据一定不能很大，比如储存的数据有356种不同的形态，它一定放不下。但有一种常用的数据类型，它的状态数很少，这就是我们平常使用的字符。24个英文字符算上各种标点符号一起，也不会超过256种。<strong>因此我们将各种字符边上号，让它对应256种状态的一种，这就是char类型的数据，它由一个字节（8盏小灯组成的小格子）来表示。</strong><u>这里就可以回答为什么字符都是正数。所谓的字符和整数一一对应，不过是我们给字符的一个编号，它的实质是由此将字符映射到一个字节（256种状态）之中。那么我能用正数编码，完成映射，为何要加入负数来干扰呢？</u>但这同样也给我们一个启示，<u>char类型只是规定了划分格子的数量，即能容纳的大小，<strong>并不能限制里面存储的数是正数还是负数（更准确的说法是有符号数与无符号数）</strong>。我们同样可以用char类型来储存很小的正数或负数，不过这仅在极特殊的情况下会使用。</u></p>
-<blockquote>
-<p>也许有反直觉，但很多c语言编译器实际上将char类型视为有符号数。c标准并不保证这一点，因此如果要通过char类型存入有符号数，应该提前声明为有符号类型。不过，在绝大多数情况下，程序对char类型是否为有符号并不敏感。</p>
-</blockquote>
-<h3 id="2、Int类型"><a href="#2、Int类型" class="headerlink" title="2、Int类型"></a>2、Int类型</h3><p>​        前面我们提到正数和负数，很明显我们需要用一定的方格去储存这两种数据类型，因为计算机的本质就是计算，而计算一定需要数字。首先，我们考虑最简单的自然数。毫无疑问，这因该是我们日常使用最多的数据，它和生活是息息相关的。还记得前文所说吗？计算机中存储的只是不同的状态，我们按照实际需求，对这些状态赋予意义。那对于自然数，最简单的方法就是从0开始，一种状态对应一个数。那么什么样的状态对应什么样的数呢？这就需要我们前文介绍的二进制编码。解决了对应关系，那么我们需要担心的就是表示数据的范围。前面的1字节肯定是不够的，256种状态，只能表示0-255，小学生的加减乘除题都会超过这个范围。那我们给一百个格子好不好？也不行，虽然表示的数范围广了，但大部分后面的数根本用不上，白白浪费了很多格子的空间。<u>因此我们在空间与范围间取舍，有了2个格子（16盏灯）、4个格子（32盏灯）、8个格子（64盏灯），三种不同的划分方法，根据我们要表示的数据范围，选择其中的一种划分方法即可。</u>比如选2个格子，那么你有了65536种不同的状态，能表示0-65535的数，已经能满足很多运算的需求了。超过了怎么办？那就选4个格子的呗，此时你已经能表示4294967296种状态，可以应付绝大多数情况了。<u><strong>这三种格子，就是c语言中的3种无符号整数数据类型：unsigned short、unsigned int、 unsigned long。</strong></u></p>
-<h3 id="3、补码表示"><a href="#3、补码表示" class="headerlink" title="3、补码表示"></a>3、补码表示</h3><p>​        那负的整数怎么办呢？这是我们遇到的第一个难题。一种简单的解决思路是和负数的表示一样，把这些格子中的头一盏灯作为符号位，如果不亮就表示正数，亮了就表示负数。<u>这样的表示有两个巨大的缺点。首先，<strong>符号位始终需要单独标记，不能直接参与运算</strong>。否则两个负数相加，符号位会由1变为0，结果变成了一个正数。固定的符号为还会导致难以进行位运算，而左移右移对于加速乘法或除法是至关重要的。<strong>其次，0在这种方法下会有两种不同的表示方式</strong>，比如二进制数10000000与二进制数00000000均表示0。</u>相当于一个人有两个名字，这在标准化、精密的计算机系统中，显然不是最优的。</p>
-<p>​        为了解决这两个问题，它的符号位最好可以一起参与计算，并且0的表示方法应该唯一。于是我们发明了补码。<u>不同的书籍对于这部分的介绍有一些差别，较权威的《CSAPP》中，将补码的核心概括为“<strong>将字的最高有效位解释为负权</strong>”。以我个人的认知而言，<strong>补码实际上基于一种简单而优雅的数学运算——取模（%）</strong>。</u>我们如果对于每一次正数加法进行取模，会发现存在一些越加越少的情况。比如 (3 + 6) % 12 = 9，而 (3 + 10) % 12 =1。这里负数就悄悄出现了。<strong>因为负数实际上就是一种特殊的减法运算，一个数的负数也就是零减去该数。</strong>对于第二个例子而言，3 + 10 =1，那么10在这里就与 -2 相等同了。也就是说，在模运算的参与下，我们可以使用一个很大的数来代替负数。而这个数要有多大，则取决于模的大小。<u>这种方法为什么好？因为我们在刚才的计算中丝毫没有去管符号位，只是进行正常加法运算，0的表示也是很自然的。由此，<strong>我们将大于等于某个值的数化出来作为负数，小于某值的数作为正数</strong>，正好解决了符号位不能参与加减的问题。</u>在下文中，我们通过一个例子来解释。</p>
-<blockquote>
-<p>​        在8位的补码表示中，这个模的大小为2^8（256），因此二进制数10000000（128）为最大负数-128，二进制数11111111（255）为最小的负数-1，二进制数01111111为最大的正数（127），二进制数0000000为0，任何二进制码小于128的为正数，而大于等于的为负数。我们可以进行一些验算，比如任何数加上255再%256，就相当于-1。任何一个正数加上128再%256结果二进制码都大于128，为一个负数。二进制数11111111+二进制数11111111 = 11111110（进位舍去）等价于-1 - 1 = -2。需要注意的是，这种表示方法的表示范围是严格界限的，若两正数相加之和大于了127，则结果会变为一个很小的负数；同理两个负数之和小于-128，则结果会变为一个正数。这种现象就是我们所谓的溢出。</p>
-</blockquote>
-<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>​        读到这里，我们已经以计算机中的数据存储为基点，概括性的介绍了C语言的字符以及整数表示方法。<u>这里需要提醒一下，<strong>由于C语言标准的复杂性和一些底层实现过程中的差别，会有一些特例出现</strong>。但为了学习的流畅性，笔者认为细枝末节的部分可以省略。</u>在下一部分中，我们将介绍更为有趣的float类型、字符串以及不同类型之间的转换。如果本篇博客能对你的学习产生帮助，笔者不甚荣幸。</p>
-<p>​        </p>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>新手入门</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>善用你的计算机</title>
     <url>/%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96/%E5%96%84%E7%94%A8%E4%BD%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
-    <content><![CDATA[<p>#善用你的计算机(键盘手法与快捷键)<br>计算机是陪伴我们以后学习、生活、工作最重要的伙伴之一，它是我们最有力的工具，但并不是每个人都能善用自己的计算机的。本文从打字指法、快捷键、效率软件三个角度教大家如何善用自己的计算机。</p>
+    <content><![CDATA[<h1 id="善用你的计算机-键盘手法与快捷键"><a href="#善用你的计算机-键盘手法与快捷键" class="headerlink" title="善用你的计算机(键盘手法与快捷键)"></a>善用你的计算机(键盘手法与快捷键)</h1><p>计算机是陪伴我们以后学习、生活、工作最重要的伙伴之一，它是我们最有力的工具，但并不是每个人都能善用自己的计算机的。本文从打字指法、快捷键、效率软件三个角度教大家如何善用自己的计算机。</p>
 <h2 id="键盘的正确使用指法"><a href="#键盘的正确使用指法" class="headerlink" title="键盘的正确使用指法"></a>键盘的正确使用指法</h2><p>身为一个准程序员，盲打是一项基础技能，有正确指法的加持，你的打字动作会更加流畅。</p>
 <p>首先是打字的准备动作，左手放在ASDF键上，右手放在JKL;上，F和J键在键盘上一般都会有突起。这样的放法相当于建立了一个坐标系，方便打出那些不那么好找的符号。</p>
 <img src="http://qyw2bbi51.hn-bkt.clouddn.com/2169406-20201001113315250-1738095953.jpg" width = "440" alt="键盘起手" >
@@ -127,6 +88,102 @@
       </categories>
       <tags>
         <tag>新手入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c语言数据类型-1</title>
+    <url>/C%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="C语言数据类型-1"><a href="#C语言数据类型-1" class="headerlink" title="C语言数据类型-1"></a>C语言数据类型-1</h1><h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><p><strong>数据类型、整数数据类型、补码编码、有符号数、其它整数类型</strong></p>
+<h2 id="一、摘要"><a href="#一、摘要" class="headerlink" title="一、摘要"></a>一、摘要</h2><blockquote>
+<p>刚开始学习时，不必了解所有的细节，就像学习开车之前不必详细了解汽车内部引擎的原理一样。——《C Primer Plus》第六版</p>
+</blockquote>
+<p>　　在本篇博客中，笔者将简要介绍C语言的基本数据类型。<u><strong>其中要点为：补码编码原理以及采用该种编码的原因、简单介绍IEEE—745标准、数据类型之间的转化。</strong></u>这些内容在所有C语言书籍中都有讲解，<u>本文主要以《CSAPP》第三版以及《C Primer Plus》第六版作为参考，面向语言学习入门者，简要地讲解该部分内容。由于笔者水平有限，如有错误，敬请指出。</u></p>
+<h2 id="二、写在前面"><a href="#二、写在前面" class="headerlink" title="二、写在前面"></a>二、写在前面</h2><p>​        如果你只是想直接了解补码的值如何计算，浮点数如何表示，那么其实非常简单。对于补码而言，我们先将数拷贝为两份。将其中一份最高位（根据二进制数的位数来确定，正数最高位为0，负数为1）去掉，然后将另一份最高位之后全置零，两份相减即可得到补码值的大小。<strong>即最高位表示负权，补码值为负权加上剩下数的大小。</strong></p>
+<blockquote>
+<p>例如，11100101为一个8位二进制数，则该数的符号位为1，补码的大小为 -1 * 2^7 + 1 * 2^6 + 1* 2^5 + 1* 2^2 +1* 2^0 。</p>
+<p>11011为一个8位二进制数，则该数的符号为0，补码的大小为1 * 2^4 + 1* 2^3 + 1* 2^1 +1* 2^0</p>
+</blockquote>
+<p>​        <u>浮点数不过是计算机中的科学计数法（ a<em>b^c )，只不过在这里a为一个纯小数，b由常见的10变成了2（某些情况下，浮点数表示有特殊含义，但不在本文讨论范围中）。</u>在IEEE—745标准中，明确规定了不同长度的浮点数各位上表示的含义。*<em>在读浮点数时，根据标准转化为科学计数法即可得到浮点数数值。</em></em></p>
+<p>​        言尽于此，你已经学会了如何读出以及初步使用这些基础的数据类型。但这只是解决了方法论的问题，而并未解决认识论的问题。稍加思考你一定会问，“c语言为什么需要使用这样的数据类型？” ”为何一定要使用补码这样违反直觉的表示方法？“ “在特殊情况下，这些精巧的数据结构会造成什么意想不到的后果？“</p>
+<p>​        如果你有对这些问题感到好奇，并且有一定的空余时间，那么欢迎阅读博客的下面部分。</p>
+<h2 id="三、数据类型简介"><a href="#三、数据类型简介" class="headerlink" title="三、数据类型简介"></a>三、数据类型简介</h2><h3 id="1、计算机中的数据存储"><a href="#1、计算机中的数据存储" class="headerlink" title="1、计算机中的数据存储"></a>1、计算机中的数据存储</h3><p>​        <u>毫无疑问，<strong>计算机有两项功能是最重要的：一是计算，二是储存</strong></u>。计算的对象、计算得到的结果都要储存在一定空间中，才能为人所用。在现实生活中，我们通常会将各种物品储存在分类好的隔箱中，计算机也遵循这样的思路。这样做的好处是显而易见的：既能用大隔箱套小隔箱方便查找，隔箱与隔箱之间的数据也不会相互干扰。计算机是一个标准化的系统，因此储存的隔箱也是严格按照标准设定的。为了减少浪费，设计者将最小的隔箱的大小定为数据能分割的最小单位，即1个信息位（ 1 bit ），它仅能通过高低电位表示两种状态，我们将这两种状态分别令为0和1。</p>
+<h3 id="2、二进制编码"><a href="#2、二进制编码" class="headerlink" title="2、二进制编码"></a>2、二进制编码</h3><p>​        在这里考一下大家，人的一只手最多能表示多少个数？只有5个吗？当然不是，我们至少能清晰表达32种不同的状态，对应起来就能表示0-31。 这是如何办到的呢？<u>很简单，我们从小拇指开始，分别将5个手指看成5个不同的数位。每个数位我们根据手指的屈伸，可以取0、1两种情况，根据排列组合的知识，我们可以知道这一共可以表示32种不同的情况。</u>同样，如果我们有5盏具有一定顺序的灯，灯的开与关分别表示两种不同的状态，那么我们也可以表示32（2^5）种状态。按照此规律，我们不难推算出：如果有8盏这样的灯，我们可以表示出256（2^8）种不同的状态；如果有16盏，则可表示65536（2^16）种状态；如果有32盏，则可以达到4294967296（2^32）种，这已经是一个很惊人的数字了，而我们只是简单用到了32盏有顺序的灯而已。</p>
+<h3 id="3、数据类型的抽象化"><a href="#3、数据类型的抽象化" class="headerlink" title="3、数据类型的抽象化"></a>3、数据类型的抽象化</h3><p>​        这样简单高效的表示方法自然受到了计算机行业的喜爱。<u>半导体技术能方便地存储高低电平两种信号，<strong>因此储存2进制数据成为了计算机行业的通用存储方式。</strong></u>但是这些存储元件实际上类似于一条近乎无限延展的方格链，我们直接存储明显不够高效。那自然就想到将这么长的链条划分为若干段。但我们有各种各样的信息需要储存，例如储存技术部所有小朋友的姓名需要划分十个小格子，而储存全校的姓名就需要一万个，因此统一划分为一种样式明显是不合理的。<u>于是结合前文中提到的大隔箱套小隔箱的方式，我们建立起了一个标准的划分方法，确保绝大部分计算机都能识别出该种方法，<strong>这就是计算机的数据类型，即规定多少个方格划分出来储存特定的一类数据。</strong></u></p>
+<h2 id="四、c语言中的数据类型"><a href="#四、c语言中的数据类型" class="headerlink" title="四、c语言中的数据类型"></a>四、c语言中的数据类型</h2><h3 id="1、字节（byte）与char类型"><a href="#1、字节（byte）与char类型" class="headerlink" title="1、字节（byte）与char类型"></a>1、字节（byte）与char类型</h3><p>​        <strong>在大部分语言中，<u>我们规定8个小灯组成最小的格子，即1字节（byte），这是计算机中数据储存的基本单位，它能表示256种不同的状态</u>。</strong>很明显，这一种类型储存的数据一定不能很大，比如储存的数据有356种不同的形态，它一定放不下。但有一种常用的数据类型，它的状态数很少，这就是我们平常使用的字符。24个英文字符算上各种标点符号一起，也不会超过256种。<strong>因此我们将各种字符边上号，让它对应256种状态的一种，这就是char类型的数据，它由一个字节（8盏小灯组成的小格子）来表示。</strong><u>这里就可以回答为什么字符都是正数。所谓的字符和整数一一对应，不过是我们给字符的一个编号，它的实质是由此将字符映射到一个字节（256种状态）之中。那么我能用正数编码，完成映射，为何要加入负数来干扰呢？</u>但这同样也给我们一个启示，<u>char类型只是规定了划分格子的数量，即能容纳的大小，<strong>并不能限制里面存储的数是正数还是负数（更准确的说法是有符号数与无符号数）</strong>。我们同样可以用char类型来储存很小的正数或负数，不过这仅在极特殊的情况下会使用。</u></p>
+<blockquote>
+<p>也许有反直觉，但很多c语言编译器实际上将char类型视为有符号数。c标准并不保证这一点，因此如果要通过char类型存入有符号数，应该提前声明为有符号类型。不过，在绝大多数情况下，程序对char类型是否为有符号并不敏感。</p>
+</blockquote>
+<h3 id="2、Int类型"><a href="#2、Int类型" class="headerlink" title="2、Int类型"></a>2、Int类型</h3><p>​        前面我们提到正数和负数，很明显我们需要用一定的方格去储存这两种数据类型，因为计算机的本质就是计算，而计算一定需要数字。首先，我们考虑最简单的自然数。毫无疑问，这因该是我们日常使用最多的数据，它和生活是息息相关的。还记得前文所说吗？计算机中存储的只是不同的状态，我们按照实际需求，对这些状态赋予意义。那对于自然数，最简单的方法就是从0开始，一种状态对应一个数。那么什么样的状态对应什么样的数呢？这就需要我们前文介绍的二进制编码。解决了对应关系，那么我们需要担心的就是表示数据的范围。前面的1字节肯定是不够的，256种状态，只能表示0-255，小学生的加减乘除题都会超过这个范围。那我们给一百个格子好不好？也不行，虽然表示的数范围广了，但大部分后面的数根本用不上，白白浪费了很多格子的空间。<u>因此我们在空间与范围间取舍，有了2个格子（16盏灯）、4个格子（32盏灯）、8个格子（64盏灯），三种不同的划分方法，根据我们要表示的数据范围，选择其中的一种划分方法即可。</u>比如选2个格子，那么你有了65536种不同的状态，能表示0-65535的数，已经能满足很多运算的需求了。超过了怎么办？那就选4个格子的呗，此时你已经能表示4294967296种状态，可以应付绝大多数情况了。<u><strong>这三种格子，就是c语言中的3种无符号整数数据类型：unsigned short、unsigned int、 unsigned long。</strong></u></p>
+<h3 id="3、补码表示"><a href="#3、补码表示" class="headerlink" title="3、补码表示"></a>3、补码表示</h3><p>​        那负的整数怎么办呢？这是我们遇到的第一个难题。一种简单的解决思路是和负数的表示一样，把这些格子中的头一盏灯作为符号位，如果不亮就表示正数，亮了就表示负数。<u>这样的表示有两个巨大的缺点。首先，<strong>符号位始终需要单独标记，不能直接参与运算</strong>。否则两个负数相加，符号位会由1变为0，结果变成了一个正数。固定的符号为还会导致难以进行位运算，而左移右移对于加速乘法或除法是至关重要的。<strong>其次，0在这种方法下会有两种不同的表示方式</strong>，比如二进制数10000000与二进制数00000000均表示0。</u>相当于一个人有两个名字，这在标准化、精密的计算机系统中，显然不是最优的。</p>
+<p>​        为了解决这两个问题，它的符号位最好可以一起参与计算，并且0的表示方法应该唯一。于是我们发明了补码。<u>不同的书籍对于这部分的介绍有一些差别，较权威的《CSAPP》中，将补码的核心概括为“<strong>将字的最高有效位解释为负权</strong>”。以我个人的认知而言，<strong>补码实际上基于一种简单而优雅的数学运算——取模（%）</strong>。</u>我们如果对于每一次正数加法进行取模，会发现存在一些越加越少的情况。比如 (3 + 6) % 12 = 9，而 (3 + 10) % 12 =1。这里负数就悄悄出现了。<strong>因为负数实际上就是一种特殊的减法运算，一个数的负数也就是零减去该数。</strong>对于第二个例子而言，3 + 10 =1，那么10在这里就与 -2 相等同了。也就是说，在模运算的参与下，我们可以使用一个很大的数来代替负数。而这个数要有多大，则取决于模的大小。<u>这种方法为什么好？因为我们在刚才的计算中丝毫没有去管符号位，只是进行正常加法运算，0的表示也是很自然的。由此，<strong>我们将大于等于某个值的数化出来作为负数，小于某值的数作为正数</strong>，正好解决了符号位不能参与加减的问题。</u>在下文中，我们通过一个例子来解释。</p>
+<blockquote>
+<p>​        在8位的补码表示中，这个模的大小为2^8（256），因此二进制数10000000（128）为最大负数-128，二进制数11111111（255）为最小的负数-1，二进制数01111111为最大的正数（127），二进制数0000000为0，任何二进制码小于128的为正数，而大于等于的为负数。我们可以进行一些验算，比如任何数加上255再%256，就相当于-1。任何一个正数加上128再%256结果二进制码都大于128，为一个负数。二进制数11111111+二进制数11111111 = 11111110（进位舍去）等价于-1 - 1 = -2。需要注意的是，这种表示方法的表示范围是严格界限的，若两正数相加之和大于了127，则结果会变为一个很小的负数；同理两个负数之和小于-128，则结果会变为一个正数。这种现象就是我们所谓的溢出。</p>
+</blockquote>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>​        读到这里，我们已经以计算机中的数据存储为基点，概括性的介绍了C语言的字符以及整数表示方法。<u>这里需要提醒一下，<strong>由于C语言标准的复杂性和一些底层实现过程中的差别，会有一些特例出现</strong>。但为了学习的流畅性，笔者认为细枝末节的部分可以省略。</u>在下一部分中，我们将介绍更为有趣的float类型、字符串以及不同类型之间的转换。如果本篇博客能对你的学习产生帮助，笔者不甚荣幸。</p>
+<p>​        </p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>新手入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>善用你的计算机</title>
+    <url>/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E4%BA%BA%E5%B7%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="人工神经网络搭建"><a href="#人工神经网络搭建" class="headerlink" title="人工神经网络搭建"></a>人工神经网络搭建</h1><h2 id="1、什么是人工神经网络"><a href="#1、什么是人工神经网络" class="headerlink" title="1、什么是人工神经网络"></a>1、什么是人工神经网络</h2><p>​    人类神经网络会找到一些<strong>输入与输出</strong>之间的关系，并且利用这些关系进行对于一些输入的输出<strong>预测</strong>。例如</p>
+<blockquote>
+<p>1-&gt;2  2-&gt;4  3-&gt;6  4-&gt;8  5-&gt;?  6-&gt;12  7-&gt;14</p>
+</blockquote>
+<p>​    在这样一个例子中，我们不难得出 y = 2 * x，并由此得出 ‘?’ 的值应该等于10。</p>
+<p>​    这是一个相当简单的例子，但是很好的显示了神经网络对于输入与输出的反应。</p>
+<p>​    人工神经网络同样志在寻找复杂事物之能够进行非常好的预测，比如对于市场价格进行预测。</p>
+<p>​    <u>人工神经网络因<strong>大数据</strong>而兴起，为人工神经网络提供越多的输入输出案例，其预测的能力也就越强</u>，例如</p>
+<blockquote>
+<p>1-&gt;2  2-&gt;4  3-&gt;?</p>
+</blockquote>
+<p>​    在这样一个例子中，我们难以确认 y = 2 * x还是 y = 2 ^ x，这就是数据过少引起的预测困难。在上一个例子中，我们可以更清晰的发现输入输出之间的关系，人类神经网络如是，人工神经网络同样如是。</p>
+<h2 id="2、输入输出之间的关系"><a href="#2、输入输出之间的关系" class="headerlink" title="2、输入输出之间的关系"></a>2、输入输出之间的关系</h2><h3 id="a、线性关系"><a href="#a、线性关系" class="headerlink" title="a、线性关系"></a>a、线性关系</h3><p>​    在以上的例子中，输入与输出呈非常明显的线性关系。如果是线性关系，那么我们可以得到 y = k * x + b，之后我们的任务就变成了确定k值与b值的大小。通过多组数据，我们可以确定k = 2，b = 0。于是我们找到了输入与输出之间的关系，并将之用于’?’的预测，得到 ‘?’ 的值应该等于10。</p>
+<p><strong>向量化</strong></p>
+<p>​    在大部分情况下，输入输出不只一个，那么对于n个输入，我们用一个n维向量进行储存。<u>这么做的原因在于向量化处理能充分利用<strong>矩阵计算的高并行性</strong>，因此在计算时更加高效。</u></p>
+<p><strong>向量化前</strong><br>$$<br>y=\sum_{i=1}^{n}{k_ix_i + b_i}<br>$$<br><strong>向量化后</strong><br>$$<br>y = \mathbf{w}^\mathsf{T}x+b<br>$$<br>​    这里，我们用w来表示储存k的向量</p>
+<h3 id="b、非线性关系"><a href="#b、非线性关系" class="headerlink" title="b、非线性关系"></a>b、非线性关系</h3><p>​    但是在绝大部分情况下，输入与输出之间呈非线性关系，例如</p>
+<blockquote>
+<p>1-&gt;3  2-&gt;4  3-&gt;5  4-&gt;4  5-&gt;？ 6-&gt;1  7-&gt;4</p>
+</blockquote>
+<p>​    我们无法用y = k * x + b来描述这样的关系，所以我们引入几个非线性函数。</p>
+<p><strong>sigmoid函数</strong><br>$$<br>y = 𝜎(x) = \frac{1}{1 + e ^ {-x}}<br>$$<br><strong>tanh函数</strong><br>$$<br>y = \frac{e ^ {x} + e ^ {-x}}{e ^ {x} + e ^ {-x}}<br>$$<br><strong>ReLu函数</strong><br>$$<br>y = max (0, x)<br>$$<br>​    为什么要引入以上三个函数？通过长时间的实践，人们发现以上三个函数在预测上做的很好，所以在此介绍这三个函数。</p>
+<p>   当然，一个函数很可能还是无法准确描述输入与输出之间的关系，这时候我们就需要将函数进行组合，例如<br>$$<br>z = 𝜎(y) = \frac{1}{1 + e ^ {-（\mathbf{w}^\mathsf{T}x+b）}}<br>$$<br>​    也就是进行函数的<strong>多层</strong>化，上一个函数的输出作为下一个函数的输入。X作为输入，y作为输出的同时作为𝜎(y)的输入。</p>
+<p>​    这样一来我们可以发现对于输出起到决定性作用的仍然是我们在线性关系中强调的k与b，或者说参数 w 与 b ，即储存 k 与 b 的向量。</p>
+<h2 id="3、人工神经网络的运作方式"><a href="#3、人工神经网络的运作方式" class="headerlink" title="3、人工神经网络的运作方式"></a>3、人工神经网络的运作方式</h2><p>​    <u>综上所述，无论在哪种关系中，在相同输入的情况下，**参数 w 、b **对输出结果起着决定性的作用。</u></p>
+<p>​    由于非线性函数本身并不会影响w与b的取值，所以我们将一个线性函数与一个非线性函数进行捆绑，成为一个节点，一个节点对应多个输入与一个输出。同时，一个节点有其对应的参数 w 与 b 。</p>
+<p>​    前文提到，输出同样可能不只一个。为了应对多个输出，<u>我们需要设置多个节点</u>。同时前文提到，我们需要进行函数的多层化才更可能找到我们需要的关系，为了找到我们需要的关系，<u>我们需要多层节点</u>。</p>
+<p>​    所以，我们设置了一个包含多层节点且每层中有多个节点的网络。该网络中每一层的输入都与上一层的输出对应，从而形成一种复杂的关系，由此来拟合我们所希望找到的复杂关系。</p>
+<p><img src="https://gitee.com/leo74751/drawing-bed/raw/master/img/u=1670159382,472414395&fm=253&fmt=auto&app=138&f=PNG.webp"></p>
+<p>​    在这个复杂关系中，对于输出起到决定性作用的就是节点中包含的参数w与b。因此，搭建人工神经网络的要务就在于**更新参数 w 与 b **使得我们能够找到想要的关系。</p>
+<h3 id="a、梯度下降与学习率"><a href="#a、梯度下降与学习率" class="headerlink" title="a、梯度下降与学习率"></a>a、梯度下降与学习率</h3><p>​    <u>所谓”我们想要的关系“就是预测输出与实际输出一致的人工神经网络，换句话说，<strong>我们需要预测输出与实际输出的差距尽可能小</strong>。</u>于是我们引入了损失函数来表示该差距，而损失函数只在特定的 w 与 b 下取得最小值。为了找到这组 w 与 b ，我们利用了<strong>梯度下降算法</strong>，此处以 w 为例。我们对w求偏导，并利用 w = w - α * dw 来使得 w 快速趋向 dw = 0 的最小值点。此处 <strong>α 被称为学习率</strong>，很显然，如果α取的过大，那么可能将永远无法到达 dw = 0 的点，但是如果α过小，又会使得学习太慢。</p>
+<p>​    此处对梯度下降进行了一个浅薄的介绍，主要是为了引入学习率α。梯度下降的具体实现将进行单独的介绍。</p>
+<h3 id="b、数据分配与学习次数"><a href="#b、数据分配与学习次数" class="headerlink" title="b、数据分配与学习次数"></a>b、数据分配与学习次数</h3><p>​    除了用来学习之外，我们还要分出一些数据来确认学习的效果，也就是<strong>校验数据集（Dev Set）</strong>。而我们进行学习的数据被称为<strong>训练数据（Training Set）</strong>。</p>
+<p>​    <u>我们通过训练数据集来使网络进行学习，利用校验数据集检测网络学习的效果。而网络学习训练数据集的次数就是<strong>训练的周期</strong>，训练次数越多神经网络对于训练数据拟合效果更好，但训练耗时增长且可能出现过拟合的情况。</u></p>
+<h3 id="c、小批量学习"><a href="#c、小批量学习" class="headerlink" title="c、小批量学习"></a>c、小批量学习</h3><p>​    由于计算资源的限制，我们往往难以将整个数据集向量化进行训练。为了提高学习效率，我们将大的训练数据集划分为多个<strong>子集（Batch）</strong>来训练。如果划分的子集过小，则训练速度较慢；如果过大，则消耗资源过大。因此，我们需要根据计算资源和实际需求合理选择子集大小。</p>
+<h3 id="d、超参数"><a href="#d、超参数" class="headerlink" title="d、超参数"></a>d、超参数</h3><p>​    <strong>超参数即我们可以人为控制的参数，例如学习率、周期、子集大小、网络层数、每层节点数量。</strong>这些超参数会一同影响人工神经网络的质量。现在对于超参数人们并没有固定的高效确定方法，只能通过不断的尝试、检测质量来不断调整自己的超参数，于是学习的速度就显得尤为重要，如果学习速度过慢，那么调整超参数的机会也会对应减少。</p>
+<h2 id="4、人工神经网络的代码实现"><a href="#4、人工神经网络的代码实现" class="headerlink" title="4、人工神经网络的代码实现"></a>4、人工神经网络的代码实现</h2><p>​    以下我们通过一个例子来进一步解释一些刚刚没有介绍到的东西，同时学习人工神经网络的代码实现。</p>
+<p>​    这是一个<strong>识别数字0~9</strong>的人工神经网络。<u>该网络的输入为图片像素的明度值，输出为十个数字分别的概率。</u></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 加载训练数据与测试数据</span></span><br><span class="line">    training_data = np.load(<span class="string">&quot;training_data.npy&quot;</span>)</span><br><span class="line">    test_data = np.load(<span class="string">&quot;test_data.npy&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建神经网络（数组为每一层的节点数）</span></span><br><span class="line">    net = Network([<span class="number">784</span>, <span class="number">40</span>, <span class="number">10</span>, <span class="number">10</span>])<span class="comment">#784个像素输入，10个可能性输出</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 参数：训练数据集、训练次数、小子集数据量、学习率、测试数据集</span></span><br><span class="line">    <span class="comment"># 进行神经网络的学习</span></span><br><span class="line">    net.SGD(training_data, <span class="number">15</span>, <span class="number">15</span>, <span class="number">1</span>, test_data)</span><br></pre></td></tr></table></figure>
+
+<h3 id="a、开始搭建"><a href="#a、开始搭建" class="headerlink" title="a、开始搭建"></a>a、开始搭建</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np <span class="comment"># numpy库支持矩阵运算，而且运算速度相当快，这是我们向量化的重要原因之一</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Network</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, sizes</span>):</span></span><br><span class="line">        <span class="comment"># 神经网络的层数，是含有节点的层数再加上输入层的这一层</span></span><br><span class="line">        self.num_layers = <span class="built_in">len</span>(sizes)</span><br><span class="line">        <span class="comment"># 有节点的层数从一开始，储存每一层的节点数</span></span><br><span class="line">        self.sizes = sizes[<span class="number">1</span>:]</span><br><span class="line">        <span class="comment"># 初始化b矩阵</span></span><br><span class="line">        self.biases = [np.random.randn(y) <span class="keyword">for</span> y <span class="keyword">in</span> sizes[<span class="number">1</span>:]]</span><br><span class="line">        <span class="comment"># 初始化w矩阵,其两维分别与上一层的输出与下一层的输入相对应</span></span><br><span class="line">        self.weights = [np.random.randn(y, x) </span><br><span class="line">                        <span class="keyword">for</span> x, y <span class="keyword">in</span> <span class="built_in">zip</span>(sizes[:-<span class="number">1</span>], sizes[<span class="number">1</span>:])]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="b、小批量数据集学习"><a href="#b、小批量数据集学习" class="headerlink" title="b、小批量数据集学习"></a>b、小批量数据集学习</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 参数在上文已经介绍过</span></span><br><span class="line"> <span class="function"><span class="keyword">def</span> <span class="title">SGD</span>(<span class="params">self, training_data, epochs, mini_batch_size, eta, test_data</span>):</span></span><br><span class="line">     <span class="keyword">if</span> test_data != <span class="literal">None</span>:</span><br><span class="line">         n_test = <span class="built_in">len</span>(test_data)</span><br><span class="line"></span><br><span class="line">     <span class="comment"># n:测试数据集的大小</span></span><br><span class="line">     n = <span class="built_in">len</span>(training_data)</span><br><span class="line">     <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(epochs):</span><br><span class="line">         <span class="comment"># 打乱训练数据</span></span><br><span class="line">         np.random.shuffle(training_data)</span><br><span class="line">         <span class="comment"># 将训练数据分割</span></span><br><span class="line">         mini_batches = [</span><br><span class="line">             training_data[k: k + mini_batch_size]</span><br><span class="line">             <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n, mini_batch_size)</span><br><span class="line">         ]</span><br><span class="line">         <span class="comment"># 小批量集数据学习</span></span><br><span class="line">         <span class="keyword">for</span> mini_batch <span class="keyword">in</span> mini_batches:</span><br><span class="line">             self.update_mini_batch(mini_batch, eta)</span><br><span class="line">         <span class="comment"># 打印进展</span></span><br><span class="line">         <span class="keyword">if</span> test_data != <span class="literal">None</span>:</span><br><span class="line">             <span class="comment"># 进行测试</span></span><br><span class="line">             num = self.evaluate(test_data)</span><br><span class="line">             <span class="built_in">print</span>(<span class="string">&quot;周期:&#123;0&#125;  &#123;1&#125;/&#123;2&#125; &#123;3&#125;%&quot;</span>.<span class="built_in">format</span>(j + <span class="number">1</span>, num, n_test, num / n_test * <span class="number">100</span>))</span><br><span class="line">         <span class="keyword">else</span>:</span><br><span class="line">             <span class="built_in">print</span>(<span class="string">&quot;周期 &#123;0&#125;  完成！&quot;</span>.<span class="built_in">format</span>(j + <span class="number">1</span>))</span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+
+<h3 id="c、通过梯度下降进行学习"><a href="#c、通过梯度下降进行学习" class="headerlink" title="c、通过梯度下降进行学习"></a>c、通过梯度下降进行学习</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_mini_batch</span>(<span class="params">self, mini_batch, eta</span>):</span></span><br><span class="line">    <span class="comment"># 拷贝w和b，填充为 0</span></span><br><span class="line">    nabla_b = [np.zeros(b.shape) <span class="keyword">for</span> b <span class="keyword">in</span> self.biases]</span><br><span class="line">    nabla_w = [np.zeros(w.shape) <span class="keyword">for</span> w <span class="keyword">in</span> self.weights]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> x, y <span class="keyword">in</span> mini_batch:</span><br><span class="line">        <span class="comment"># backprop方法将在另一篇中单独介绍</span></span><br><span class="line">        delta_nabla_b, delta_nabla_w = self.backprop(x, y)</span><br><span class="line">        nabla_b = [nb + dnb <span class="keyword">for</span> nb, dnb <span class="keyword">in</span> <span class="built_in">zip</span>(nabla_b, delta_nabla_b)]</span><br><span class="line">        nabla_w = [nw + dnw <span class="keyword">for</span> nw, dnw <span class="keyword">in</span> <span class="built_in">zip</span>(nabla_w, delta_nabla_w)]</span><br><span class="line">        </span><br><span class="line">    self.weights = [</span><br><span class="line">        w - (α / <span class="built_in">len</span>(mini_batch)) * nw <span class="keyword">for</span> w, nw <span class="keyword">in</span> <span class="built_in">zip</span>(self.weights, nabla_w)</span><br><span class="line">    ]</span><br><span class="line">    self.biases = [</span><br><span class="line">        b - (α / <span class="built_in">len</span>(mini_batch)) * nb <span class="keyword">for</span> b, nb <span class="keyword">in</span> <span class="built_in">zip</span>(self.biases, nabla_b)</span><br><span class="line">    ]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="d、评估并返回判断正确样本数"><a href="#d、评估并返回判断正确样本数" class="headerlink" title="d、评估并返回判断正确样本数"></a>d、评估并返回判断正确样本数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate</span>(<span class="params">self, test_data</span>):</span></span><br><span class="line">    <span class="comment"># 将概率最大的一个数作为结果进行测试，其中feedforward方法将在另一篇中单独介绍</span></span><br><span class="line">    test_result = [(np.argmax(self.feedforward(x)), y)</span><br><span class="line">                   <span class="keyword">for</span> x, y <span class="keyword">in</span> test_data]</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(<span class="built_in">int</span>(x == y) <span class="keyword">for</span> x, y <span class="keyword">in</span> test_result)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>
